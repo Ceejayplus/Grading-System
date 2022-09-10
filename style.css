@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+    background-image: url('table2.jpg');
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+.div11{
+    margin: auto;
+    margin-top: 180px;
+}
+::placeholder{
+    font-size: 25px;
+    padding-left: 7px;
+}
+.cos {
+    margin-left: -6px;
+    margin-top: -9px;
+}
+.just {
+    font-family: Poppins, sans-serif;
+}
+.big {
+    font-family: "Bree Serif", serif;
+    font-size: 35px;
+    margin-bottom: 0.5rem;
+    font-weight: 600 !important;
+    line-height: 1.2;
+    font-weight: 500;
+}
+#scoreBoard {
+    background-color: white !important;
+}

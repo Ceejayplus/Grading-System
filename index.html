@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GRADING SYSTEM</title>
+        <link rel="stylesheet" href="phone.css" media="(min-width: 480px) and (max-width:767px)">
+        <link rel="stylesheet" href="/bootstrap-5.1.3-dist/css/bootstrap.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="/daisies_on_orange_background_193847.jpg" type="image/x-icon">
+    </head>
+    <body>
+        <div class="shadow-lg rounded p-3 text-center div11" style="height: 350px; width: 500px;">
+            <marquee class="mb-3 mt-4 fs-6 just fst-italic" behavior="" direction="right">welcome to the grading system</marquee>
+            <h1 class="text-decoration-underline big mb-4">GRADING SYSTEM</h1> 
+            <input type="text" class="w-50 h-25 fs-3 border-0" placeholder="Enter Your Score" id="userInput"> <button onclick="scoreChecker()" class="btn btn-success cos btn-lg h-25 w-25">check</button>
+            <!-- <input type="text" class="form-control w-50 mt-4 mx-auto" placeholder="See Result Here" aria-label="Your Result" aria-describedby="button-addon2" id="scoreBoard"> -->
+            <div class="mt-4 pb-2 w-50 mx-auto" style="height: 50px; background-color:#fff;;" id="scoreBoard">
+
+            </div>
+        </div>
+
+
+        <script>
+            var max =100
+            var songExcellent = new Audio("excellent.wav")
+            var songGood = new Audio("good.wav")
+            var songCredit = new Audio("credit.mp3")
+            var songAverage = new Audio("average.mp3")
+            var songFail = new Audio("fail.m4a")
+            var songPass = new Audio("invalid.m4a")
+            function scoreChecker(){
+                var userScore = userInput.value
+                if(userScore==""){
+                    scoreBoard.innerText = "PLEASE INPUT YOUR SCORE"
+                    scoreBoard.style.fontSize = '20px'
+                    scoreBoard.style.fontWeight = '400'
+                }
+                else if(userScore>=70 && userScore<=max){
+                    scoreBoard.innerText = 'A-Excelent 😀';
+                    scoreBoard.style.color = 'green';
+                    scoreBoard.style.fontSize = '30px'
+                    scoreBoard.style.fontWeight = '700'
+                    songExcellent.play()
+                }
+                else if(userScore>=60 && userScore<70){
+                    scoreBoard.innerText = "B-Good 🙂"
+                    scoreBoard.style.color = "green"
+                    scoreBoard.style.fontSize = "30px"
+                    scoreBoard.style.fontWeight = "700"
+                    songGood.play()
+                }
+                else if(userScore>=50 && userScore<60){
+                    scoreBoard.innerText = "C-Credit 🤔"
+                    scoreBoard.style.color = "chartreuse"
+                    scoreBoard.style.fontSize = "30px"
+                    scoreBoard.style.fontWeight = "700"
+                    songCredit.play()
+                }
+                else if(userScore>=45 && userScore<50){
+                    scoreBoard.innerText = "D-Average 😬"
+                    scoreBoard.style.color = "orange"
+                    scoreBoard.style.fontSize = "30px"
+                    scoreBoard.style.fontWeight = "700"
+                    songAverage.play()
+                }
+                else if(userScore>=40 && userScore<45){
+                    scoreBoard.innerText = "E - Pass😔"
+                    scoreBoard.style.color = "crimson"
+                    scoreBoard.style.fontSize = "30px"
+                    scoreBoard.style.fontWeight = "700"
+                    songPass.play()
+                }
+                else if(userScore>=0 && userScore<40){
+                    scoreBoard.innerText = "F - Fail🥴"
+                    scoreBoard.style.color = "red"
+                    scoreBoard.style.fontSize = "30px"
+                    scoreBoard.style.fontWeight = "700"
+                    songFail.play()
+                }
+                else{
+                    scoreBoard.innerText = "NOT RECOGNIZED"
+                    scoreBoard.style.fontSize = '27px'
+                    scoreBoard.style.fontWeight = '700'
+                }
+            }
+        </script>
+
+    </body>
+</html>
